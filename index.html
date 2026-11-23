@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grammar for Writing: Word Order & Combining Sentences</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Smooth custom scrollbar for reference drawer */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .tile-item {
+      user-select: none;
+      touch-action: manipulation;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- Top Navigation & Progress Header -->
+  <header class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-teal-600"></span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-teal-700">Grammar for Writing</span>
+        </div>
+        <h1 class="text-lg sm:text-xl font-bold text-slate-900">Word Order &amp; Combining Sentences</h1>
+      </div>
+
+      <div class="flex items-center gap-3 sm:gap-4">
+        <!-- Progress Pill -->
+        <div class="bg-slate-100 border border-slate-200 rounded-xl px-3.5 py-2 flex items-center gap-3">
+          <div class="text-xs font-medium text-slate-600">
+            Completed: <span id="progress-count" class="font-bold text-slate-900">0</span> / <span id="total-count">17</span>
+          </div>
+          <div class="w-20 sm:w-28 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div id="progress-bar" class="h-full bg-teal-600 transition-all duration-300" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <!-- Reference Drawer Toggle Button -->
+        <button
+          id="open-ref-btn"
+          type="button"
+          class="inline-flex items-center gap-2 bg-sky-700 hover:bg-sky-800 active:bg-sky-900 text-white text-sm font-medium px-4 py-2.5 rounded-xl shadow-sm transition cursor-pointer"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+          <span>Grammar &amp; Shark Cards</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Task Navigation Tabs -->
+    <nav class="max-w-5xl mx-auto px-4 sm:px-6 pb-2.5 overflow-x-auto">
+      <div class="flex items-center gap-1.5 min-w-max" id="task-tabs">
+        <button data-tab="all" class="tab-btn active-tab px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-slate-900 text-white transition">All Tasks</button>
+        <button data-tab="task-1" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 transition">1. Word Order</button>
+        <button data-tab="task-2" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 transition">2. Shark Sentences</button>
+        <button data-tab="task-3" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 transition">3. and / or</button>
+        <button data-tab="task-4" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 transition">4. but / whereas</button>
+        <button data-tab="task-5" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 transition">5. Squirrels Table</button>
+        <button data-tab="task-6" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 transition">6. Classmates</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-8">
+
+    <!-- Subtle Notice Banner -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
+      <p class="text-sm text-slate-600">
+        Complete each exercise carefully using standard punctuation and capitalization. Open <strong class="text-slate-800">Grammar &amp; Shark Cards</strong> anytime to review the rules and facts.
+      </p>
+      <button
+        type="button"
+        onclick="openDrawer()"
+        class="text-xs font-semibold text-sky-700 hover:text-sky-900 underline underline-offset-2 shrink-0 self-start sm:self-center cursor-pointer"
+      >
+        Open Reference Drawer &rarr;
+      </button>
+    </div>
+
+    <!-- ==================== TASK 1: WORD ORDER ==================== -->
+    <section id="task-1" class="task-section bg-white border border-slate-200 rounded-2xl p-5 sm:p-7 shadow-sm space-y-6">
+      <div class="border-b border-slate-100 pb-4 flex items-start justify-between gap-4">
+        <div>
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-sky-700 bg-sky-50 px-2.5 py-1 rounded-md mb-1.5">Exercise 1</span>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900">Rewrite the words in the correct order.</h2>
+          <p class="text-sm text-slate-500 mt-1">Tap or drag the tiles to build each sentence in the answer box.</p>
+        </div>
+      </div>
+
+      <!-- Item 1.1 -->
+      <div class="space-y-3 p-4 rounded-xl bg-slate-50 border border-slate-200/80" data-item-id="t1-1">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-bold text-slate-700">1.</span>
+          <span id="status-t1-1" class="text-xs font-semibold px-2.5 py-0.5 rounded-full hidden"></span>
+        </div>
+
+        <!-- Source Word Bank -->
+        <div>
+          <span class="text-xs font-medium text-slate-500 block mb-1.5">Available parts:</span>
+          <div id="bank-t1-1" class="flex flex-wrap gap-2 min-h-[42px] p-2 bg-white rounded-xl border border-dashed border-slate-300"></div>
+        </div>
+
+        <!-- Target Sentence Area -->
+        <div>
+          <span class="text-xs font-medium text-slate-500 block mb-1.5">Your sentence:</span>
+          <div id="target-t1-1" class="flex flex-wrap items-center gap-2 min-h-[48px] p-2.5 bg-white rounded-xl border border-slate-300 focus-within:border-sky-600"></div>
+        </div>
+
+        <!-- Action Controls -->
+        <div class="flex flex-wrap items-center gap-2.5 pt-1">
+          <button type="button" onclick="checkTask1('t1-1')" class="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold transition cursor-pointer">Check</button>
+          <button type="button" onclick="resetTask1('t1-1')" class="px-3.5 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-sm font-medium transition cursor-pointer">Reset</button>
+          <button type="button" id="sample-btn-t1-1" onclick="toggleSample('t1-1')" class="hidden px-3.5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-sm font-medium transition cursor-pointer">Show Sample Answer</button>
+        </div>
+        <div id="fb-t1-1" class="text-sm hidden rounded-xl p-3"></div>
+        <div id="sample-t1-1" class="hidden text-sm bg-slate-100 border border-slate-300 text-slate-800 rounded-xl p-3">
+          <span class="font-semibold">Sample answer:</span> The tiger shark lives in tropical oceans.
+        </div>
+      </div>
+
+      <!-- Item 1.2 -->
+      <div class="space-y-3 p-4 rounded-xl bg-slate-50 border border-slate-200/80" data-item-id="t1-2">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-bold text-slate-700">2.</span>
+          <span id="status-t1-2" class="text-xs font-semibold px-2.5 py-0.5 rounded-full hidden"></span>
+        </div>
+
+        <div>
+          <span class="text-xs font-medium text-slate-500 block mb-1.5">Available parts:</span>
+          <div id="bank-t1-2" class="flex flex-wrap gap-2 min-h-[42px] p-2 bg-white rounded-xl border border-dashed border-slate-300"></div>
+        </div>
+
+        <div>
+          <span class="text-xs font-medium text-slate-500 block mb-1.5">Your sentence:</span>
+          <div id="target-t1-2" class="flex flex-wrap items-center gap-2 min-h-[48px] p-2.5 bg-white rounded-xl border border-slate-300"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2.5 pt-1">
+          <button type="button" onclick="checkTask1('t1-2')" class="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold transition cursor-pointer">Check</button>
+          <button type="button" onclick="resetTask1('t1-2')" class="px-3.5 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-sm font-medium transition cursor-pointer">Reset</button>
+          <button type="button" id="sample-btn-t1-2" onclick="toggleSample('t1-2')" class="hidden px-3.5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-sm font-medium transition cursor-pointer">Show Sample Answer</button>
+        </div>
+        <div id="fb-t1-2" class="text-sm hidden rounded-xl p-3"></div>
+        <div id="sample-t1-2" class="hidden text-sm bg-slate-100 border border-slate-300 text-slate-800 rounded-xl p-3">
+          <span class="font-semibold">Sample answer:</span> However, the whale shark isn't dangerous.
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TASK 2: SHARK INFORMATION SENTENCES ==================== -->
+    <section id="task-2" class="task-section bg-white border border-slate-200 rounded-2xl p-5 sm:p-7 shadow-sm space-y-6">
+      <div class="border-b border-slate-100 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-sky-700 bg-sky-50 px-2.5 py-1 rounded-md mb-1.5">Exercise 2</span>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900">Review the shark information boxes. Make sentences using the words below.</h2>
+          <p class="text-sm text-slate-500 mt-1">Write one complete, factual sentence for each target word.</p>
+        </div>
+        <button
+          type="button"
+          onclick="openDrawer('sharks')"
+          class="self-start sm:self-center px-3.5 py-2 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200 text-xs font-semibold transition cursor-pointer shrink-0"
+        >
+          View Shark Info Cards
+        </button>
+      </div>
+
+      <!-- Keyword Bank Display -->
+      <div class="bg-sky-50/70 border border-sky-200 rounded-xl p-3.5 flex flex-wrap items-center gap-2.5">
+        <span class="text-xs font-semibold uppercase tracking-wide text-sky-800 mr-1">Target words:</span>
+        <span class="px-3 py-1 bg-white border border-sky-200 rounded-lg text-sm font-medium text-slate-800">attack</span>
+        <span class="px-3 py-1 bg-white border border-sky-200 rounded-lg text-sm font-medium text-slate-800">light spots</span>
+        <span class="px-3 py-1 bg-white border border-sky-200 rounded-lg text-sm font-medium text-slate-800">oceans</span>
+        <span class="px-3 py-1 bg-white border border-sky-200 rounded-lg text-sm font-medium text-slate-800">tuna</span>
+        <span class="px-3 py-1 bg-white border border-sky-200 rounded-lg text-sm font-medium text-slate-800">weight</span>
+      </div>
+
+      <div id="task2-items" class="space-y-4"></div>
+    </section>
+
+    <!-- ==================== TASK 3: COMBINING WITH AND / OR ==================== -->
+    <section id="task-3" class="task-section bg-white border border-slate-200 rounded-2xl p-5 sm:p-7 shadow-sm space-y-6">
+      <div class="border-b border-slate-100 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-sky-700 bg-sky-50 px-2.5 py-1 rounded-md mb-1.5">Exercise 3</span>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900">Join the pairs of sentences with <em>and</em> or <em>or</em>. Take out the repeated words.</h2>
+        </div>
+        <button
+          type="button"
+          onclick="openDrawer('and-or')"
+          class="self-start sm:self-center px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold transition cursor-pointer shrink-0"
+        >
+          View Grammar Rule
+        </button>
+      </div>
+
+      <div id="task3-items" class="space-y-4"></div>
+    </section>
+
+    <!-- ==================== TASK 4: CONTRASTING WITH BUT / WHEREAS ==================== -->
+    <section id="task-4" class="task-section bg-white border border-slate-200 rounded-2xl p-5 sm:p-7 shadow-sm space-y-6">
+      <div class="border-b border-slate-100 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-sky-700 bg-sky-50 px-2.5 py-1 rounded-md mb-1.5">Exercise 4</span>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900">Write two complete sentences contrasting whale sharks and tiger sharks. Use <em>but</em> or <em>whereas</em>.</h2>
+          <p class="text-sm text-slate-500 mt-1">Compare facts from the shark information boxes using proper punctuation.</p>
+        </div>
+        <div class="flex items-center gap-2 self-start sm:self-center shrink-0">
+          <button
+            type="button"
+            onclick="openDrawer('but-whereas')"
+            class="px-3 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold transition cursor-pointer"
+          >
+            Grammar Rule
+          </button>
+          <button
+            type="button"
+            onclick="openDrawer('sharks')"
+            class="px-3 py-2 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200 text-xs font-semibold transition cursor-pointer"
+          >
+            Shark Cards
+          </button>
+        </div>
+      </div>
+
+      <div id="task4-items" class="space-y-4"></div>
+    </section>
+
+    <!-- ==================== TASK 5: BOTH ... AND / NEITHER ... NOR (SQUIRRELS TABLE) ==================== -->
+    <section id="task-5" class="task-section bg-white border border-slate-200 rounded-2xl p-5 sm:p-7 shadow-sm space-y-6">
+      <div class="border-b border-slate-100 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-sky-700 bg-sky-50 px-2.5 py-1 rounded-md mb-1.5">Exercise 5</span>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900">Write sentences using the information in the table and <em>both ... and ...</em> or <em>neither ... nor ...</em> .</h2>
+        </div>
+        <button
+          type="button"
+          onclick="openDrawer('both-neither')"
+          class="self-start sm:self-center px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold transition cursor-pointer shrink-0"
+        >
+          View Grammar Rule
+        </button>
+      </div>
+
+      <!-- Squirrels Comparison Table -->
+      <div class="overflow-x-auto rounded-xl border border-slate-300">
+        <table class="w-full text-sm text-left border-collapse">
+          <thead>
+            <tr class="bg-purple-800 text-white">
+              <th class="py-3 px-4 font-semibold border-r border-purple-700 w-1/2">Characteristic</th>
+              <th class="py-3 px-4 font-semibold text-center border-r border-purple-700 w-1/4">red squirrels</th>
+              <th class="py-3 px-4 font-semibold text-center w-1/4">grey squirrels</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 bg-white">
+            <tr>
+              <td class="py-3 px-4 font-medium text-slate-800 border-r border-slate-200">1. have long tails</td>
+              <td class="py-3 px-4 text-center text-slate-700 border-r border-slate-200">yes</td>
+              <td class="py-3 px-4 text-center text-slate-700">yes</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-medium text-slate-800 border-r border-slate-200">2. are an endangered species</td>
+              <td class="py-3 px-4 text-center text-slate-700 border-r border-slate-200">no</td>
+              <td class="py-3 px-4 text-center text-slate-700">no</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="task5-items" class="space-y-4"></div>
+    </section>
+
+    <!-- ==================== TASK 6: CLASSMATES COMPARISON ==================== -->
+    <section id="task-6" class="task-section bg-white border border-slate-200 rounded-2xl p-5 sm:p-7 shadow-sm space-y-6">
+      <div class="border-b border-slate-100 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-sky-700 bg-sky-50 px-2.5 py-1 rounded-md mb-1.5">Exercise 6</span>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900">Write two original sentences about your classmates using <em>both ... and ...</em> and <em>neither ... nor ...</em> .</h2>
+          <p class="text-sm text-slate-500 mt-1">Write one sentence with <em>both ... and ...</em> and one sentence with <em>neither ... nor ...</em> .</p>
+        </div>
+        <button
+          type="button"
+          onclick="openDrawer('both-neither')"
+          class="self-start sm:self-center px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold transition cursor-pointer shrink-0"
+        >
+          View Grammar Rule
+        </button>
+      </div>
+
+      <div id="task6-items" class="space-y-4"></div>
+    </section>
+
+  </main>
+
+  <!-- ==================== SLIDE-OVER REFERENCE DRAWER ==================== -->
+  <div id="ref-backdrop" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-40 hidden transition-opacity" onclick="closeDrawer()"></div>
+  <aside
+    id="ref-drawer"
+    class="fixed top-0 right-0 h-full w-full max-w-xl bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col border-l border-slate-200"
+    aria-label="Grammar Rules and Shark Fact Cards"
+  >
+    <!-- Drawer Header -->
+    <div class="px-5 py-4 bg-slate-900 text-white flex items-center justify-between shrink-0">
+      <div>
+        <h3 class="text-base sm:text-lg font-bold">Reference: Grammar &amp; Shark Cards</h3>
+        <p class="text-xs text-slate-300">Workbook rules and fact sheets</p>
+      </div>
+      <button
+        type="button"
+        onclick="closeDrawer()"
+        class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 transition cursor-pointer"
+        aria-label="Close reference drawer"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Drawer Filter Pills -->
+    <div class="px-5 py-2.5 bg-slate-100 border-b border-slate-200 flex items-center gap-1.5 overflow-x-auto shrink-0">
+      <button type="button" onclick="filterDrawer('all')" class="drawer-pill px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 text-white cursor-pointer" data-filter="all">All</button>
+      <button type="button" onclick="filterDrawer('word-order')" class="drawer-pill px-3 py-1 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-200 cursor-pointer" data-filter="word-order">Word Order</button>
+      <button type="button" onclick="filterDrawer('sharks')" class="drawer-pill px-3 py-1 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-200 cursor-pointer" data-filter="sharks">Shark Cards</button>
+      <button type="button" onclick="filterDrawer('and-or')" class="drawer-pill px-3 py-1 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-200 cursor-pointer" data-filter="and-or">and / or</button>
+      <button type="button" onclick="filterDrawer('but-whereas')" class="drawer-pill px-3 py-1 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-200 cursor-pointer" data-filter="but-whereas">but / whereas</button>
+      <button type="button" onclick="filterDrawer('both-neither')" class="drawer-pill px-3 py-1 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-200 cursor-pointer" data-filter="both-neither">both / neither</button>
+    </div>
+
+    <!-- Drawer Scrollable Body -->
+    <div class="p-5 overflow-y-auto space-y-6 flex-1 text-sm">
+
+      <!-- Grammar Box 1: Word Order -->
+      <div class="ref-card border-l-4 border-emerald-700 bg-white border border-slate-200 rounded-xl p-4 shadow-xs space-y-3" data-cat="word-order">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-800">Grammar: Word Order</span>
+        </div>
+        <p class="text-slate-700 leading-relaxed">
+          In English sentences, the first two elements are usually the subject then the verb. Some sentences also have a third or fourth element. These example sentences show some possible orders of English sentences.
+        </p>
+
+        <div class="space-y-2.5 text-xs">
+          <div class="overflow-x-auto rounded-lg border border-emerald-800">
+            <table class="w-full text-center border-collapse">
+              <tr class="bg-emerald-800 text-white font-semibold">
+                <th class="p-2 border-r border-emerald-700">subject</th>
+                <th class="p-2 border-r border-emerald-700">verb</th>
+                <th class="p-2">object</th>
+              </tr>
+              <tr class="bg-white text-slate-800">
+                <td class="p-2 border-r border-emerald-800">Squirrels</td>
+                <td class="p-2 border-r border-emerald-800">eat</td>
+                <td class="p-2">seeds, nuts and fruit.</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="overflow-x-auto rounded-lg border border-emerald-800">
+            <table class="w-full text-center border-collapse">
+              <tr class="bg-emerald-800 text-white font-semibold">
+                <th class="p-2 border-r border-emerald-700">subject</th>
+                <th class="p-2 border-r border-emerald-700">verb</th>
+                <th class="p-2 border-r border-emerald-700">adjective</th>
+                <th class="p-2">prepositional phrase</th>
+              </tr>
+              <tr class="bg-white text-slate-800">
+                <td class="p-2 border-r border-emerald-800">Grey squirrels</td>
+                <td class="p-2 border-r border-emerald-800">are</td>
+                <td class="p-2 border-r border-emerald-800">common</td>
+                <td class="p-2">in Britain.</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="overflow-x-auto rounded-lg border border-emerald-800">
+            <table class="w-full text-center border-collapse">
+              <tr class="bg-emerald-800 text-white font-semibold">
+                <th class="p-2 border-r border-emerald-700">linker</th>
+                <th class="p-2 border-r border-emerald-700">subject</th>
+                <th class="p-2 border-r border-emerald-700">verb</th>
+                <th class="p-2">prepositional phrase</th>
+              </tr>
+              <tr class="bg-white text-slate-800">
+                <td class="p-2 border-r border-emerald-800">However,</td>
+                <td class="p-2 border-r border-emerald-800">they</td>
+                <td class="p-2 border-r border-emerald-800">were introduced</td>
+                <td class="p-2">from North America.</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="overflow-x-auto rounded-lg border border-emerald-800">
+            <table class="w-full text-center border-collapse">
+              <tr class="bg-emerald-800 text-white font-semibold">
+                <th class="p-2 border-r border-emerald-700">linker</th>
+                <th class="p-2 border-r border-emerald-700">subject</th>
+                <th class="p-2 border-r border-emerald-700">verb</th>
+                <th class="p-2">adjective</th>
+              </tr>
+              <tr class="bg-white text-slate-800">
+                <td class="p-2 border-r border-emerald-800">In addition,</td>
+                <td class="p-2 border-r border-emerald-800">they</td>
+                <td class="p-2 border-r border-emerald-800">have become</td>
+                <td class="p-2">endangered.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shark Information Cards -->
+      <div class="ref-card space-y-3" data-cat="sharks">
+        <span class="text-xs font-bold uppercase tracking-wider text-sky-800 block">Shark Information Cards</span>
+        <div class="grid grid-cols-1 gap-4">
+          <!-- Whale Shark -->
+          <div class="bg-cyan-50/90 border border-cyan-200 rounded-2xl p-4 space-y-1.5 text-slate-800">
+            <h4 class="text-base font-bold text-slate-900 pb-1 border-b border-cyan-200">Whale shark</h4>
+            <p><strong class="font-semibold">Animal class:</strong> Chondrichthyes (fish)</p>
+            <p><strong class="font-semibold">Habitat:</strong> Oceans</p>
+            <p><strong class="font-semibold">Length:</strong> 5.5–10 m</p>
+            <p><strong class="font-semibold">Weight:</strong> 18 tonnes</p>
+            <p><strong class="font-semibold">Colour:</strong> White stomach, grey-blue back and sides with light spots</p>
+            <p><strong class="font-semibold">Diet:</strong> Plankton, krill, other very small animals</p>
+            <p><strong class="font-semibold">Conservation status:</strong> Endangered (will probably become extinct)</p>
+            <p><strong class="font-semibold">Behaviour towards humans:</strong> No recorded attacks</p>
+          </div>
+
+          <!-- Tiger Shark -->
+          <div class="bg-stone-100 border border-stone-300 rounded-2xl p-4 space-y-1.5 text-slate-800">
+            <h4 class="text-base font-bold text-slate-900 pb-1 border-b border-stone-300">Tiger shark</h4>
+            <p><strong class="font-semibold">Animal class:</strong> Chondrichthyes (fish)</p>
+            <p><strong class="font-semibold">Habitat:</strong> Oceans</p>
+            <p><strong class="font-semibold">Length:</strong> 3.0–4.2 m</p>
+            <p><strong class="font-semibold">Weight:</strong> 0.86 tonnes</p>
+            <p><strong class="font-semibold">Colour:</strong> White stomach, grey-brown back and sides</p>
+            <p><strong class="font-semibold">Diet:</strong> Tuna, dolphins, turtles</p>
+            <p><strong class="font-semibold">Conservation status:</strong> Not currently at risk of extinction</p>
+            <p><strong class="font-semibold">Behaviour towards humans:</strong> Many reports of attacks on humans</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grammar Box 2: and and or -->
+      <div class="ref-card border-l-4 border-emerald-700 bg-white border border-slate-200 rounded-xl p-4 shadow-xs space-y-2.5" data-cat="and-or">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 block">Grammar: <em>and</em> and <em>or</em></span>
+        <p class="text-slate-700 leading-relaxed">
+          When joining two sentences together, you can take out some words. For example, when the subject and verb of both sentences are the same, or even just the subject, you do not need to repeat them. This makes the sentences shorter and better because you can avoid repetition.
+        </p>
+        <div class="bg-slate-50 rounded-lg p-3 space-y-2 text-xs sm:text-sm">
+          <p class="font-semibold text-slate-800">In affirmative sentences, use <em>and</em>:</p>
+          <p class="text-sky-900 italic">The tiger shark has sharp teeth. The tiger shark has a powerful bite.<br />&rarr; The tiger shark has sharp teeth <strong>and</strong> a powerful bite.</p>
+          <p class="text-sky-900 italic">The tiger shark has sharp teeth. The tiger shark eats fish and turtles.<br />&rarr; The tiger shark has sharp teeth <strong>and</strong> eats fish and turtles.</p>
+          <p class="font-semibold text-slate-800 pt-1">In negative sentences, use <em>or</em>:</p>
+          <p class="text-sky-900 italic">The tiger shark is not an endangered species. The tiger shark is not a protected species.<br />&rarr; The tiger shark is not an endangered <strong>or</strong> (a) protected species.</p>
+        </div>
+      </div>
+
+      <!-- Grammar Box 3: but and whereas -->
+      <div class="ref-card border-l-4 border-emerald-700 bg-white border border-slate-200 rounded-xl p-4 shadow-xs space-y-2.5" data-cat="but-whereas">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 block">Grammar: <em>but</em> and <em>whereas</em></span>
+        <p class="text-slate-700 leading-relaxed">
+          <em>But</em> and <em>whereas</em> are used to contrast two sentences. <em>Whereas</em> is more formal than <em>but</em>. Put a comma before <em>but</em> and <em>whereas</em>.
+        </p>
+        <div class="bg-slate-50 rounded-lg p-3 text-xs sm:text-sm">
+          <p class="text-sky-900 italic">Whale sharks weigh up to 18 tonnes<strong>, but/whereas</strong> tiger sharks usually weigh less than a tonne.</p>
+        </div>
+      </div>
+
+      <!-- Grammar Box 4: both and neither -->
+      <div class="ref-card border-l-4 border-emerald-700 bg-white border border-slate-200 rounded-xl p-4 shadow-xs space-y-2.5" data-cat="both-neither">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 block">Grammar: <em>both</em> and <em>neither</em></span>
+        <p class="text-slate-700 leading-relaxed">
+          You can use other phrases to compare two different things.
+        </p>
+        <div class="bg-slate-50 rounded-lg p-3 space-y-2 text-xs sm:text-sm">
+          <p class="text-slate-800">If two things/people have the same characteristic, use <em>both ... and ...</em> :</p>
+          <p class="text-sky-900 italic"><strong>Both</strong> the grey <strong>and</strong> red squirrel <u>carry</u> parapoxvirus.<br /><strong>Both</strong> grey <strong>and</strong> red squirrels <u>carry</u> parapoxvirus.</p>
+          <p class="text-slate-800 pt-1">If they do not have a particular characteristic, use <em>neither ... nor ...</em> :</p>
+          <p class="text-sky-900 italic"><strong>Neither</strong> the grey <strong>nor</strong> the red squirrel <u>has</u> large ears.<br /><strong>Neither</strong> grey <strong>nor</strong> red squirrels <u>have</u> large ears.</p>
+        </div>
+        <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
+          Use a plural verb form with <em>both ... and</em>. Use a singular verb form for singular subjects and a plural verb form with plural subjects with <em>neither ... nor</em>.
+        </p>
+      </div>
+
+    </div>
+  </aside>
+
+  <script>
+    // =========================================================================
+    // STATE & PROGRESS TRACKING
+    // =========================================================================
+    const completedItems = new Set();
+    const TOTAL_ITEMS = 17; // 2 (T1) + 5 (T2) + 4 (T3) + 2 (T4) + 2 (T5) + 2 (T6)
+
+    function updateProgress(itemId, isComplete) {
+      if (isComplete) {
+        completedItems.add(itemId);
+      } else {
+        completedItems.delete(itemId);
+      }
+      const count = completedItems.size;
+      document.getElementById('progress-count').textContent = count;
+      document.getElementById('total-count').textContent = TOTAL_ITEMS;
+      const pct = Math.round((count / TOTAL_ITEMS) * 100);
+      document.getElementById('progress-bar').style.width = pct + '%';
+
+      const badge = document.getElementById('status-' + itemId);
+      if (badge) {
+        badge.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-amber-100', 'text-amber-800');
+        if (isComplete) {
+          badge.textContent = 'Completed';
+          badge.classList.add('bg-emerald-100', 'text-emerald-800');
+        } else {
+          badge.textContent = 'Needs revision';
+          badge.classList.add('bg-amber-100', 'text-amber-800');
+        }
+      }
+    }
+
+    function showFeedback(itemId, isSuccess, message) {
+      const fb = document.getElementById('fb-' + itemId);
+      const sampleBtn = document.getElementById('sample-btn-' + itemId);
+      if (sampleBtn) sampleBtn.classList.remove('hidden');
+
+      fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-900', 'border-emerald-200', 'bg-amber-50', 'text-amber-900', 'border-amber-200', 'border');
+      fb.classList.add('border');
+      if (isSuccess) {
+        fb.classList.add('bg-emerald-50', 'text-emerald-900', 'border-emerald-200');
+      } else {
+        fb.classList.add('bg-amber-50', 'text-amber-900', 'border-amber-200');
+      }
+      fb.innerHTML = message;
+      updateProgress(itemId, isSuccess);
+    }
+
+    function toggleSample(itemId) {
+      const sampleBox = document.getElementById('sample-' + itemId);
+      const btn = document.getElementById('sample-btn-' + itemId);
+      if (!sampleBox) return;
+      const isHidden = sampleBox.classList.contains('hidden');
+      sampleBox.classList.toggle('hidden');
+      if (btn) {
+        btn.textContent = isHidden ? 'Hide Sample Answer' : 'Show Sample Answer';
+      }
+    }
+
+    // Helper: basic sentence checks
+    function startsWithCapital(str) {
+      return /^[A-Z]/.test(str.trim());
+    }
+    function endsWithPunctuation(str) {
+      return /[.!?]$/.test(str.trim());
+    }
+    function normalizeSpaces(str) {
+      return str.trim().replace(/\s+/g, ' ');
+    }
+
+    // =========================================================================
+    // DRAWER & TAB NAVIGATION
+    // =========================================================================
+    const drawer = document.getElementById('ref-drawer');
+    const backdrop = document.getElementById('ref-backdrop');
+
+    function openDrawer(category = 'all') {
+      backdrop.classList.remove('hidden');
+      drawer.classList.remove('translate-x-full');
+      filterDrawer(category);
+    }
+
+    function closeDrawer() {
+      drawer.classList.add('translate-x-full');
+      backdrop.classList.add('hidden');
+    }
+
+    function filterDrawer(cat) {
+      document.querySelectorAll('.drawer-pill').forEach(btn => {
+        if (btn.dataset.filter === cat) {
+          btn.classList.add('bg-slate-800', 'text-white', 'font-semibold');
+          btn.classList.remove('text-slate-600', 'hover:bg-slate-200', 'font-medium');
+        } else {
+          btn.classList.remove('bg-slate-800', 'text-white', 'font-semibold');
+          btn.classList.add('text-slate-600', 'hover:bg-slate-200', 'font-medium');
+        }
+      });
+
+      document.querySelectorAll('.ref-card').forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    document.getElementById('open-ref-btn').addEventListener('click', () => openDrawer('all'));
+
+    // Task Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          b.classList.remove('bg-slate-900', 'text-white', 'font-semibold');
+          b.classList.add('text-slate-600', 'hover:bg-slate-100', 'font-medium');
+        });
+        btn.classList.add('bg-slate-900', 'text-white', 'font-semibold');
+        btn.classList.remove('text-slate-600', 'hover:bg-slate-100', 'font-medium');
+
+        document.querySelectorAll('.task-section').forEach(sec => {
+          if (target === 'all' || sec.id === target) {
+            sec.classList.remove('hidden');
+          } else {
+            sec.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // =========================================================================
+    // TASK 1: WORD ORDER (TILE BUILDER WITH TAP & DRAG-AND-DROP)
+    // =========================================================================
+    const task1Config = {
+      't1-1': {
+        scrambled: ['lives', 'The tiger shark', 'in tropical oceans', '.'],
+        expected: ['The tiger shark', 'lives', 'in tropical oceans', '.']
+      },
+      't1-2': {
+        scrambled: ["isn't", 'the whale shark', 'However,', 'dangerous', '.'],
+        expected: ['However,', 'the whale shark', "isn't", 'dangerous', '.']
+      }
+    };
+
+    const task1State = {
+      't1-1': { bank: [...task1Config['t1-1'].scrambled], target: [] },
+      't1-2': { bank: [...task1Config['t1-2'].scrambled], target: [] }
+    };
+
+    let draggedItem = null;
+
+    function renderTask1(id) {
+      const bankEl = document.getElementById('bank-' + id);
+      const targetEl = document.getElementById('target-' + id);
+      bankEl.innerHTML = '';
+      targetEl.innerHTML = '';
+
+      task1State[id].bank.forEach((word, idx) => {
+        const tile = createTile(id, 'bank', idx, word);
+        bankEl.appendChild(tile);
+      });
+
+      if (task1State[id].target.length === 0) {
+        const placeholder = document.createElement('span');
+        placeholder.className = 'text-xs text-slate-400 px-1';
+        placeholder.textContent = 'Tap or drag parts here in order...';
+        targetEl.appendChild(placeholder);
+      } else {
+        task1State[id].target.forEach((word, idx) => {
+          const tile = createTile(id, 'target', idx, word);
+          targetEl.appendChild(tile);
+        });
+      }
+
+      // Allow drop on target container
+      targetEl.ondragover = (e) => e.preventDefault();
+      targetEl.ondrop = (e) => {
+        e.preventDefault();
+        if (!draggedItem || draggedItem.id !== id) return;
+        const { from, index } = draggedItem;
+        const val = task1State[id][from].splice(index, 1)[0];
+        task1State[id].target.push(val);
+        draggedItem = null;
+        renderTask1(id);
+      };
+
+      bankEl.ondragover = (e) => e.preventDefault();
+      bankEl.ondrop = (e) => {
+        e.preventDefault();
+        if (!draggedItem || draggedItem.id !== id) return;
+        const { from, index } = draggedItem;
+        const val = task1State[id][from].splice(index, 1)[0];
+        task1State[id].bank.push(val);
+        draggedItem = null;
+        renderTask1(id);
+      };
+    }
+
+    function createTile(id, location, index, text) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.draggable = true;
+      btn.textContent = text;
+      btn.className =
+        location === 'bank'
+          ? 'tile-item px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-sky-50 border border-slate-300 hover:border-sky-400 text-sm font-medium text-slate-800 shadow-2xs transition cursor-pointer'
+          : 'tile-item px-3 py-1.5 rounded-lg bg-sky-700 hover:bg-sky-800 text-white text-sm font-medium shadow-2xs transition cursor-pointer';
+
+      // Click/Tap moves between bank and target
+      btn.addEventListener('click', () => {
+        const val = task1State[id][location].splice(index, 1)[0];
+        const dest = location === 'bank' ? 'target' : 'bank';
+        task1State[id][dest].push(val);
+        renderTask1(id);
+      });
+
+      // Drag events
+      btn.addEventListener('dragstart', () => {
+        draggedItem = { id, from: location, index };
+      });
+
+      btn.addEventListener('dragover', (e) => e.preventDefault());
+
+      btn.addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!draggedItem || draggedItem.id !== id) return;
+        const { from, index: fromIdx } = draggedItem;
+        const val = task1State[id][from].splice(fromIdx, 1)[0];
+        task1State[id][location].splice(index, 0, val);
+        draggedItem = null;
+        renderTask1(id);
+      });
+
+      return btn;
+    }
+
+    function resetTask1(id) {
+      task1State[id].bank = [...task1Config[id].scrambled];
+      task1State[id].target = [];
+      renderTask1(id);
+      const fb = document.getElementById('fb-' + id);
+      fb.classList.add('hidden');
+    }
+
+    function checkTask1(id) {
+      const current = task1State[id].target;
+      const expected = task1Config[id].expected;
+
+      if (current.length < expected.length) {
+        showFeedback(id, false, 'Place all word parts and the punctuation mark into the sentence box first.');
+        return;
+      }
+
+      const isMatch = current.every((val, i) => val === expected[i]);
+      if (isMatch) {
+        showFeedback(id, true, 'Correct! The word order and punctuation are accurate.');
+      } else {
+        let hint = 'Not quite right. Check the word order rules (linker, subject, verb, complement) and end punctuation.';
+        if (current[current.length - 1] !== '.') {
+          hint = 'Make sure the period (.) is placed at the very end of the sentence.';
+        } else if (!/^[A-Z]/.test(current[0])) {
+          hint = 'A sentence must begin with a capitalized word.';
+        }
+        showFeedback(id, false, hint);
+      }
+    }
+
+    renderTask1('t1-1');
+    renderTask1('t1-2');
+
+    // =========================================================================
+    // TASK 2: SHARK INFORMATION SENTENCES (MINIMAL HINTS)
+    // =========================================================================
+    const task2Data = [
+      {
+        id: 't2-1',
+        keyword: 'attack',
+        regex: /\battack(s|ed|ing)?\b/i,
+        factRegex: /(whale shark|tiger shark|human|report|record|no)/i,
+        sample: 'There are many reports of tiger shark attacks on humans. / Whale sharks have no recorded attacks on humans.'
+      },
+      {
+        id: 't2-2',
+        keyword: 'light spots',
+        regex: /\blight spots\b/i,
+        factRegex: /(whale shark|grey-blue|back|side|colour|color)/i,
+        sample: 'The whale shark has a grey-blue back and sides with light spots.'
+      },
+      {
+        id: 't2-3',
+        keyword: 'oceans',
+        regex: /\boceans?\b/i,
+        factRegex: /(whale shark|tiger shark|shark|live|habitat)/i,
+        sample: 'Both whale sharks and tiger sharks live in oceans.'
+      },
+      {
+        id: 't2-4',
+        keyword: 'tuna',
+        regex: /\btuna\b/i,
+        factRegex: /(tiger shark|eat|diet|dolphin|turtle)/i,
+        sample: 'The tiger shark eats tuna, dolphins, and turtles.'
+      },
+      {
+        id: 't2-5',
+        keyword: 'weight',
+        regex: /\bweight\b/i,
+        factRegex: /(whale shark|tiger shark|18|0\.86|tonne)/i,
+        sample: 'The weight of a whale shark is 18 tonnes, whereas the weight of a tiger shark is 0.86 tonnes.'
+      }
+    ];
+
+    const task2Container = document.getElementById('task2-items');
+    task2Data.forEach((item, idx) => {
+      const div = document.createElement('div');
+      div.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2.5';
+      div.innerHTML = `
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-sm font-bold text-slate-700">${idx + 1}.</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-sky-100 text-sky-900 text-xs font-semibold">Keyword: ${item.keyword}</span>
+          </div>
+          <span id="status-${item.id}" class="text-xs font-semibold px-2.5 py-0.5 rounded-full hidden"></span>
+        </div>
+        <input
+          id="input-${item.id}"
+          type="text"
+          autocomplete="off"
+          placeholder="Write a complete sentence using '${item.keyword}'..."
+          class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 outline-none text-sm text-slate-800"
+        />
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button type="button" onclick="checkTask2('${item.id}')" class="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold transition cursor-pointer">Check</button>
+          <button type="button" id="sample-btn-${item.id}" onclick="toggleSample('${item.id}')" class="hidden px-3.5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-sm font-medium transition cursor-pointer">Show Sample Answer</button>
+        </div>
+        <div id="fb-${item.id}" class="text-sm hidden rounded-xl p-3"></div>
+        <div id="sample-${item.id}" class="hidden text-sm bg-slate-100 border border-slate-300 text-slate-800 rounded-xl p-3">
+          <span class="font-semibold">Sample answer:</span> ${item.sample}
+        </div>
+      `;
+      task2Container.appendChild(div);
+    });
+
+    function checkTask2(id) {
+      const item = task2Data.find(d => d.id === id);
+      const val = normalizeSpaces(document.getElementById('input-' + id).value);
+
+      if (!val) {
+        showFeedback(id, false, 'Please write a sentence before checking.');
+        return;
+      }
+      if (!startsWithCapital(val)) {
+        showFeedback(id, false, 'Start your sentence with a capital letter.');
+        return;
+      }
+      if (!endsWithPunctuation(val)) {
+        showFeedback(id, false, 'End your sentence with a period (.).');
+        return;
+      }
+      if (!item.regex.test(val)) {
+        showFeedback(id, false, `Your sentence must include the target word/phrase "<strong>${item.keyword}</strong>".`);
+        return;
+      }
+      if (!item.factRegex.test(val) || val.split(' ').length < 4) {
+        showFeedback(id, false, 'Connect the keyword to a specific shark or fact from the Shark Information Cards.');
+        return;
+      }
+
+      showFeedback(id, true, 'Well done! Your sentence uses the target keyword and information from the shark cards.');
+    }
+
+    // =========================================================================
+    // TASK 3: JOINING SENTENCES WITH AND / OR
+    // =========================================================================
+    const task3Data = [
+      {
+        id: 't3-1',
+        prompt: 'The whale shark has a grey-blue back. The whale shark has a white stomach.',
+        conjunction: 'and',
+        repeatedPattern: /the whale shark/gi,
+        maxSubjectOccurrences: 1,
+        requiredParts: [/grey-blue back/i, /\band\b/i, /white stomach/i],
+        sample: 'The whale shark has a grey-blue back and a white stomach.'
+      },
+      {
+        id: 't3-2',
+        prompt: 'The tiger shark is grey-brown. The tiger shark has a striped pattern on its body.',
+        conjunction: 'and',
+        repeatedPattern: /the tiger shark/gi,
+        maxSubjectOccurrences: 1,
+        requiredParts: [/grey-brown/i, /\band\b/i, /striped pattern on its body/i],
+        sample: 'The tiger shark is grey-brown and has a striped pattern on its body.'
+      },
+      {
+        id: 't3-3',
+        prompt: 'The tiger shark eats large sea creatures. The tiger shark can be dangerous to humans.',
+        conjunction: 'and',
+        repeatedPattern: /the tiger shark/gi,
+        maxSubjectOccurrences: 1,
+        requiredParts: [/eats large sea creatures/i, /\band\b/i, /can be dangerous to humans/i],
+        sample: 'The tiger shark eats large sea creatures and can be dangerous to humans.'
+      },
+      {
+        id: 't3-4',
+        prompt: 'The whale shark is not aggressive. The whale shark is not dangerous to swim with.',
+        conjunction: 'or',
+        repeatedPattern: /the whale shark/gi,
+        maxSubjectOccurrences: 1,
+        requiredParts: [/not aggressive/i, /\bor\b/i, /dangerous to swim with/i],
+        sample: 'The whale shark is not aggressive or dangerous to swim with.'
+      }
+    ];
+
+    const task3Container = document.getElementById('task3-items');
+    task3Data.forEach((item, idx) => {
+      const div = document.createElement('div');
+      div.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2.5';
+      div.innerHTML = `
+        <div class="flex items-start justify-between gap-2">
+          <p class="text-sm font-medium text-slate-800"><span class="font-bold text-slate-700 mr-1">${idx + 1}.</span> ${item.prompt}</p>
+          <span id="status-${item.id}" class="text-xs font-semibold px-2.5 py-0.5 rounded-full hidden shrink-0"></span>
+        </div>
+        <input
+          id="input-${item.id}"
+          type="text"
+          autocomplete="off"
+          placeholder="Write the combined sentence..."
+          class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 outline-none text-sm text-slate-800"
+        />
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button type="button" onclick="checkTask3('${item.id}')" class="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold transition cursor-pointer">Check</button>
+          <button type="button" id="sample-btn-${item.id}" onclick="toggleSample('${item.id}')" class="hidden px-3.5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-sm font-medium transition cursor-pointer">Show Sample Answer</button>
+        </div>
+        <div id="fb-${item.id}" class="text-sm hidden rounded-xl p-3"></div>
+        <div id="sample-${item.id}" class="hidden text-sm bg-slate-100 border border-slate-300 text-slate-800 rounded-xl p-3">
+          <span class="font-semibold">Sample answer:</span> ${item.sample}
+        </div>
+      `;
+      task3Container.appendChild(div);
+    });
+
+    function checkTask3(id) {
+      const item = task3Data.find(d => d.id === id);
+      const val = normalizeSpaces(document.getElementById('input-' + id).value);
+
+      if (!val) {
+        showFeedback(id, false, 'Please enter your combined sentence first.');
+        return;
+      }
+      if (!startsWithCapital(val)) {
+        showFeedback(id, false, 'Begin the sentence with a capital letter.');
+        return;
+      }
+      if (!endsWithPunctuation(val)) {
+        showFeedback(id, false, 'End the sentence with a period (.).');
+        return;
+      }
+
+      // Check single sentence (no middle period)
+      const withoutEnd = val.slice(0, -1);
+      if (withoutEnd.includes('.')) {
+        showFeedback(id, false, 'Join the two sentences into a single sentence rather than keeping two separate sentences.');
+        return;
+      }
+
+      // Check conjunction
+      const conjRegex = new RegExp(`\\b${item.conjunction}\\b`, 'i');
+      if (!conjRegex.test(val)) {
+        showFeedback(id, false, 'Check whether the sentence is affirmative (use <em>and</em>) or negative (use <em>or</em>).');
+        return;
+      }
+
+      // Check repeated subject removed
+      const subjectMatches = val.match(item.repeatedPattern) || [];
+      if (subjectMatches.length > item.maxSubjectOccurrences) {
+        showFeedback(id, false, 'Remember to take out the repeated subject (and repeated verb if identical).');
+        return;
+      }
+
+      // For item 1 and 4, check repeated verb/auxiliary removal
+      if (id === 't3-1' && (val.match(/\bhas\b/gi) || []).length > 1) {
+        showFeedback(id, false, 'Since both clauses share the same verb ("has"), omit the second "has".');
+        return;
+      }
+      if (id === 't3-4' && (val.match(/\bis not\b/gi) || []).length > 1) {
+        showFeedback(id, false, 'Omit the repeated words ("is not") in the second part.');
+        return;
+      }
+
+      // Check all meaning parts preserved
+      const allPartsPresent = item.requiredParts.every(rx => rx.test(val));
+      if (!allPartsPresent) {
+        showFeedback(id, false, 'Make sure you kept all the key information from both original sentences.');
+        return;
+      }
+
+      showFeedback(id, true, 'Correct! You combined the sentences cleanly and removed the repeated words.');
+    }
+
+    // =========================================================================
+    // TASK 4: CONTRASTING WITH BUT OR WHEREAS
+    // =========================================================================
+    const task4Data = [
+      {
+        id: 't4-1',
+        sample: 'The whale shark has a grey-blue back, whereas the tiger shark has a grey-brown back.'
+      },
+      {
+        id: 't4-2',
+        sample: 'The whale shark eats plankton and krill, but the tiger shark eats tuna, dolphins, and turtles.'
+      }
+    ];
+
+    const task4Container = document.getElementById('task4-items');
+    task4Data.forEach((item, idx) => {
+      const div = document.createElement('div');
+      div.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2.5';
+      div.innerHTML = `
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-bold text-slate-700">Sentence ${idx + 1}</span>
+          <span id="status-${item.id}" class="text-xs font-semibold px-2.5 py-0.5 rounded-full hidden"></span>
+        </div>
+        <input
+          id="input-${item.id}"
+          type="text"
+          autocomplete="off"
+          placeholder="Contrast whale sharks and tiger sharks using ', but' or ', whereas'..."
+          class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 outline-none text-sm text-slate-800"
+        />
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button type="button" onclick="checkTask4('${item.id}')" class="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold transition cursor-pointer">Check</button>
+          <button type="button" id="sample-btn-${item.id}" onclick="toggleSample('${item.id}')" class="hidden px-3.5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-sm font-medium transition cursor-pointer">Show Sample Answer</button>
+        </div>
+        <div id="fb-${item.id}" class="text-sm hidden rounded-xl p-3"></div>
+        <div id="sample-${item.id}" class="hidden text-sm bg-slate-100 border border-slate-300 text-slate-800 rounded-xl p-3">
+          <span class="font-semibold">Sample answer:</span> ${item.sample}
+        </div>
+      `;
+      task4Container.appendChild(div);
+    });
+
+    function checkTask4(id) {
+      const val = normalizeSpaces(document.getElementById('input-' + id).value);
+
+      if (!val) {
+        showFeedback(id, false, 'Please write a contrasting sentence first.');
+        return;
+      }
+      if (!startsWithCapital(val)) {
+        showFeedback(id, false, 'Start your sentence with a capital letter.');
+        return;
+      }
+      if (!endsWithPunctuation(val)) {
+        showFeedback(id, false, 'End your sentence with a period (.).');
+        return;
+      }
+      if (!/\b(but|whereas)\b/i.test(val)) {
+        showFeedback(id, false, 'Use either <em>but</em> or <em>whereas</em> to contrast the two sharks.');
+        return;
+      }
+      if (!/,\s+(but|whereas)\b/i.test(val)) {
+        showFeedback(id, false, 'Remember the punctuation rule: put a comma (,) directly before <em>but</em> or <em>whereas</em>.');
+        return;
+      }
+      const hasWhale = /whale sharks?/i.test(val);
+      const hasTiger = /tiger sharks?/i.test(val);
+      if (!hasWhale || !hasTiger) {
+        showFeedback(id, false, 'Mention both <strong>whale sharks</strong> and <strong>tiger sharks</strong> to contrast them.');
+        return;
+      }
+
+      // Check that sentence 2 isn't identical to sentence 1
+      const otherId = id === 't4-1' ? 't4-2' : 't4-1';
+      const otherVal = normalizeSpaces(document.getElementById('input-' + otherId).value);
+      if (otherVal && val.toLowerCase() === otherVal.toLowerCase()) {
+        showFeedback(id, false, 'Write two different contrasting facts for sentences 1 and 2.');
+        return;
+      }
+
+      showFeedback(id, true, 'Great contrast! Both sharks, the conjunction, and the comma are used properly.');
+    }
+
+    // =========================================================================
+    // TASK 5: BOTH ... AND / NEITHER ... NOR (SQUIRRELS TABLE)
+    // =========================================================================
+    const task5Data = [
+      {
+        id: 't5-1',
+        label: '1. (have long tails — yes / yes)',
+        sample: 'Both red and grey squirrels have long tails. / Both the red and the grey squirrel have long tails.'
+      },
+      {
+        id: 't5-2',
+        label: '2. (are an endangered species — no / no)',
+        sample: 'Neither red nor grey squirrels are an endangered species. / Neither the red nor the grey squirrel is an endangered species.'
+      }
+    ];
+
+    const task5Container = document.getElementById('task5-items');
+    task5Data.forEach((item) => {
+      const div = document.createElement('div');
+      div.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2.5';
+      div.innerHTML = `
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-bold text-slate-700">${item.label}</span>
+          <span id="status-${item.id}" class="text-xs font-semibold px-2.5 py-0.5 rounded-full hidden"></span>
+        </div>
+        <input
+          id="input-${item.id}"
+          type="text"
+          autocomplete="off"
+          placeholder="Write your sentence based on row ${item.id === 't5-1' ? '1' : '2'}..."
+          class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 outline-none text-sm text-slate-800"
+        />
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button type="button" onclick="checkTask5('${item.id}')" class="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold transition cursor-pointer">Check</button>
+          <button type="button" id="sample-btn-${item.id}" onclick="toggleSample('${item.id}')" class="hidden px-3.5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-sm font-medium transition cursor-pointer">Show Sample Answer</button>
+        </div>
+        <div id="fb-${item.id}" class="text-sm hidden rounded-xl p-3"></div>
+        <div id="sample-${item.id}" class="hidden text-sm bg-slate-100 border border-slate-300 text-slate-800 rounded-xl p-3">
+          <span class="font-semibold">Sample answer:</span> ${item.sample}
+        </div>
+      `;
+      task5Container.appendChild(div);
+    });
+
+    function checkTask5(id) {
+      const val = normalizeSpaces(document.getElementById('input-' + id).value);
+
+      if (!val) {
+        showFeedback(id, false, 'Please write your sentence first.');
+        return;
+      }
+      if (!startsWithCapital(val)) {
+        showFeedback(id, false, 'Begin with a capital letter.');
+        return;
+      }
+      if (!endsWithPunctuation(val)) {
+        showFeedback(id, false, 'End with a period (.).');
+        return;
+      }
+
+      const mentionsRed = /\bred\b/i.test(val);
+      const mentionsGrey = /\bgrey\b/i.test(val);
+      const mentionsSquirrel = /\bsquirrels?\b/i.test(val);
+
+      if (!mentionsRed || !mentionsGrey || !mentionsSquirrel) {
+        showFeedback(id, false, 'Include both <strong>red</strong> and <strong>grey</strong> squirrels in your comparison.');
+        return;
+      }
+
+      if (id === 't5-1') {
+        if (!/\bboth\b.*\band\b/i.test(val)) {
+          showFeedback(id, false, 'Since the answer is "yes" for both squirrels, use <em>both ... and ...</em> .');
+          return;
+        }
+        if (!/\blong tails?\b/i.test(val)) {
+          showFeedback(id, false, 'Include the characteristic from row 1 ("have long tails").');
+          return;
+        }
+        if (/\bhas\b/i.test(val)) {
+          showFeedback(id, false, 'Check verb agreement: always use a plural verb form (<em>have</em>) with <em>both ... and ...</em> .');
+          return;
+        }
+        if (!/\bhave\b/i.test(val)) {
+          showFeedback(id, false, 'Use the verb <em>have</em> with <em>both ... and ...</em> .');
+          return;
+        }
+        showFeedback(id, true, 'Correct! Accurate use of <em>both ... and ...</em> and plural verb agreement.');
+      } else {
+        if (!/\bneither\b.*\bnor\b/i.test(val)) {
+          showFeedback(id, false, 'Since the answer is "no" for both squirrels, use <em>neither ... nor ...</em> .');
+          return;
+        }
+        if (!/\bendangered species\b/i.test(val)) {
+          showFeedback(id, false, 'Include the characteristic from row 2 ("endangered species").');
+          return;
+        }
+        if (/\b(not|aren't|isn't)\b/i.test(val)) {
+          showFeedback(id, false, 'Avoid double negatives: <em>neither ... nor ...</em> already makes the sentence negative.');
+          return;
+        }
+        // Check singular vs plural verb agreement with neither...nor
+        const isPluralSubject = /\bsquirrels\b/i.test(val);
+        if (isPluralSubject && !/\bare\b/i.test(val)) {
+          showFeedback(id, false, 'Check verb agreement: with plural subjects ("squirrels"), use the plural verb <em>are</em>.');
+          return;
+        }
+        if (!isPluralSubject && !/\bis\b/i.test(val)) {
+          showFeedback(id, false, 'Check verb agreement: with singular subjects ("squirrel"), use the singular verb <em>is</em>.');
+          return;
+        }
+        showFeedback(id, true, 'Correct! Accurate use of <em>neither ... nor ...</em> and subject-verb agreement.');
+      }
+    }
+
+    // =========================================================================
+    // TASK 6: CLASSMATES COMPARISON (BOTH...AND / NEITHER...NOR)
+    // =========================================================================
+    const task6Data = [
+      {
+        id: 't6-1',
+        type: 'both',
+        label: '1. Sentence using both ... and ...',
+        sample: 'Both Ali and Sara speak three languages.'
+      },
+      {
+        id: 't6-2',
+        type: 'neither',
+        label: '2. Sentence using neither ... nor ...',
+        sample: 'Neither Amir nor Dana is wearing a hat today.'
+      }
+    ];
+
+    const task6Container = document.getElementById('task6-items');
+    task6Data.forEach((item) => {
+      const div = document.createElement('div');
+      div.className = 'p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2.5';
+      div.innerHTML = `
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-bold text-slate-700">${item.label}</span>
+          <span id="status-${item.id}" class="text-xs font-semibold px-2.5 py-0.5 rounded-full hidden"></span>
+        </div>
+        <input
+          id="input-${item.id}"
+          type="text"
+          autocomplete="off"
+          placeholder="Write an original sentence about two classmates..."
+          class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 outline-none text-sm text-slate-800"
+        />
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button type="button" onclick="checkTask6('${item.id}')" class="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold transition cursor-pointer">Check</button>
+          <button type="button" id="sample-btn-${item.id}" onclick="toggleSample('${item.id}')" class="hidden px-3.5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-sm font-medium transition cursor-pointer">Show Sample Answer</button>
+        </div>
+        <div id="fb-${item.id}" class="text-sm hidden rounded-xl p-3"></div>
+        <div id="sample-${item.id}" class="hidden text-sm bg-slate-100 border border-slate-300 text-slate-800 rounded-xl p-3">
+          <span class="font-semibold">Sample answer:</span> ${item.sample}
+        </div>
+      `;
+      task6Container.appendChild(div);
+    });
+
+    function checkTask6(id) {
+      const item = task6Data.find(d => d.id === id);
+      const val = normalizeSpaces(document.getElementById('input-' + id).value);
+
+      if (!val) {
+        showFeedback(id, false, 'Please write your sentence first.');
+        return;
+      }
+      if (!startsWithCapital(val)) {
+        showFeedback(id, false, 'Start your sentence with a capital letter.');
+        return;
+      }
+      if (!endsWithPunctuation(val)) {
+        showFeedback(id, false, 'End your sentence with a period (.).');
+        return;
+      }
+
+      if (item.type === 'both') {
+        if (!/\bboth\b.+\band\b.+/i.test(val)) {
+          showFeedback(id, false, 'Use the paired structure <em>both [person 1] and [person 2]</em> followed by a verb phrase.');
+          return;
+        }
+        if (val.split(' ').length < 5) {
+          showFeedback(id, false, 'Write a complete sentence with two subjects and a predicate.');
+          return;
+        }
+        showFeedback(id, true, 'Well done! Your sentence properly uses <em>both ... and ...</em> .');
+      } else {
+        if (!/\bneither\b.+\bnor\b.+/i.test(val)) {
+          showFeedback(id, false, 'Use the paired structure <em>neither [person 1] nor [person 2]</em> followed by a verb phrase.');
+          return;
+        }
+        if (/\b(not|isn't|aren't|don't|doesn't)\b/i.test(val)) {
+          showFeedback(id, false, 'Avoid negative verbs (like <em>not</em> or <em>isn\'t</em>) after <em>neither ... nor ...</em> .');
+          return;
+        }
+        if (val.split(' ').length < 5) {
+          showFeedback(id, false, 'Write a complete sentence with two subjects and a predicate.');
+          return;
+        }
+        showFeedback(id, true, 'Well done! Your sentence properly uses <em>neither ... nor ...</em> .');
+      }
+    }
+  </script>
+</body>
+</html>
